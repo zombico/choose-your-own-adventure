@@ -484,9 +484,9 @@ var charMaker = {};
 
 	   	 charMaker.printHP(HP);charMaker.printMP(MP);
 			$('#stats').html(
-				`<p>Strength: ${strengthVal}  ${checkStrBonus()} <br>
+				`   <br>Strength: ${strengthVal}  ${checkStrBonus()} <br>
 				    Intelligence: ${intelVal}  ${checkIntBonus()}<br>
-				    Fortune: ${fortuneVal}  ${checkFortBonus()}</p>
+				    Fortune: ${fortuneVal}  ${checkFortBonus()}<br>
 				`)	   	 
 	}
 
@@ -500,7 +500,7 @@ var charMaker = {};
  
         
 	        if  (typeClass === 'Hero' ){
-	        	 $('#charClass').html('<p> Class: Hero </p>')
+	        	 $('#charClass').html('<br> Class: Hero <br>')
 	        
 	        	 
 	        	 HP = 20; MP = 10;
@@ -517,7 +517,7 @@ var charMaker = {};
 
 	        }
 	        else if (typeClass === 'Mage' ){
-	        	$('#charClass').html('<p> Class: Mage </p>')
+	        	$('#charClass').html('<br> Class: Mage <br>')
 	        	 HP = 10; MP = 20;
 	        	 
 
@@ -530,7 +530,7 @@ var charMaker = {};
 
 	        }
 	        else if (typeClass === 'Rogue' ) {
-	        	$('#charClass').html('<p> Class: Rogue </p>') 
+	        	$('#charClass').html('<br> Class: Rogue <br>') 
 	        	 HP = 15; MP = 15;
 	        
 
