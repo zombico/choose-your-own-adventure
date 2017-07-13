@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+    .hidden {
+      display: none !important;
+    }
+
+.intro {
+	display: inline-block
+}
+
+.toggler {
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:5px;
+	padding-right:5px;
+	background-color:darkcyan;
+	color:white;
+}
+
+.valAttr {
+	margin-right:10px;
+	margin-left:10px;
+}
+
+.screen {
+	background-color:grey;
+	height:100vh;
+	text-align:left;
+	padding-top:100px;
+	margin:auto;
+}
+
+.opener {
+	background-color:black;
+	color:white;
+	padding:20px; 
+ 	max-width:400px;
+ 	margin:auto;
+}
+
+.interface{
+	max-width:400px;
+	margin:auto;
+	background-color:orange;
+	padding:20px;
+}
+
+.statControls {
+	margin-right:160px;
+	float:right;
+}
+
+.bigButton {
+	margin:auto;
+	display:block;
+	width:150px;
+	padding:20px;
+	color:white;
+	text-align:center;
+	background-color:darkgoldenrod;
+}
+
+.interfaceShort {
+	color:transparent;
+	height:20px;
+}
+
+#menuButton {
+	color:white;
+	padding:10px;
+	border: solid white 1px;
+	text-align:center;
+}
+
+</style>
+	<title></title>
+</head>
+<body>
+
+<div class= 'screen'>
+	<div class = 'opener'>
+	   <span id='menuButton' class='hidden'>Menu</span>
+
+	     <div id= 'charName' class="intro">
+	     
+	     <p>Input a name for your character!</p>
+	        <form id='login' class='form-inline'>
+	          <div class='field'>
+	            <input type='text' name='login' class='form-control' placeholder='Character Name' required />
+	            <button class='btn btn-success'>Submit</button>
+	          </div>
+
+	        </form>
+		</div>  
+
+		<div id='randomName'><br><br>      
+	         <form id='generate'><button>Generate Random</button></form>
+	    </div>   
+
+	    <div id='loggedin' class='hidden'>
+	          <p> 
+	           <span id='user'></span>
+	           <span id='charClass'></span> 
+	           <span id='HPbox'></span><br>
+	           <span id='MPbox'></span>
+	           <span id='stats'></span><br>
+	           <span id='equip'></span>
+	           </p>
+	 	</div>
+	</div>
+
+ <div id='charSelector' class='hidden interface'>	 
+      <h3>Choose a Character Class</h1>
+      <form id='charTypeClass'>
+      	<input name="charTypeClass" type="radio" value="Hero">
+  	    <label  for="Hero">Hero</label>
+		
+		<br>
+		<input name="charTypeClass" type="radio" value="Mage">
+	    <label  for="Mage">Mage</label>
+		
+		<br>
+		<input name="charTypeClass"  type="radio" value="Rogue">
+	    <label  for="Rogue">Rogue</label>
+		
+		<br><br>
+      <button>Confirm</button>
+      </form>
+
+  </div>
+
+  <div id='allocator' class='hidden interface'>
+
+  	<h3>Allocate Points</h3><span id='allocated'></span> <span> Points Remaining </span>
+		<p>
+			<span class='strengthVal valAttr'> </span>
+			<span class= ' '> + </span><span class='strengthBonus'></span>
+			Strength
+			<span class='statControls'><span class='toggler' id='strengthDown'>-</span> <span class='toggler' id='strengthUp'> + </span> </span>
+			
+		</p>
+		<p>
+			<span class='intelVal valAttr'> </span>
+			<span class= ' '> + </span><span class='intelBonus'></span>	
+			Intelligence
+			<span class='statControls'><span class='toggler' id='intelDown'>-</span> <span class='toggler' id='intelUp'> + </span> </span>
+			 
+		</p>	
+		<p>
+			<span class='fortuneVal valAttr'> </span>
+			<span class= ' '> + </span><span class='fortuneBonus'></span>
+			Fortune
+			<span class='statControls'><span class='toggler' id='fortuneDown'>-</span> <span class='toggler' id='fortuneUp'> + </span> </span>
+		 
+		</p>	
+
+		<button>Confirm</button>
+
+		<span class='allocatorAlert hidden'>Please allocate all points!</span>
+  </div>
+
+  <div id='lootBox1' class='hidden interface'>
+	  <form id='chest1'>
+	  <p>Open the chest to receive your first item!</p>
+	  <button>Open Chest</button>
+	  </form>
+  </div>
+
+  <div id='lootBox2' class='hidden interface'>
+	  <form id='chest2'>
+	  <p>Open the chest to receive your second item!</p>
+	  <button>Open Chest</button>
+	  </form>
+  </div>
+
+  <div id='startGame' class='hidden interface'>
+  		<span class='bigButton'>Start Game</span>
+  </div>
+
+  	<div id = 'gameScreen' class='hidden'>
+	  <div id='scenario' class='hidden interface'>
+	  		<form id ='actions'>
+	  		<h3 class='scenarioName'></h3> 
+	  		<span class='scenarioDesc'></span><br><br>
+
+	  		
+	  		<input type='radio' name='action' value='1'>
+	  		<label for='choice1'><span class='choice1'></span></label>
+	  		<br><br>
+	  		
+			
+	  		<input type='radio' name='action' value='2'>
+	  		<label for='choice2'><span class='choice2'></span></label>
+	  		<br><br>
+	  
+	  		
+	  		<input type='radio' name='action' value='3'>
+	  		<label for='choice3'><span class='choice3'></span></label>
+	  		<br>
+	  		<br>
+	  		<button>Choose Action</button>
+	  		</form>
+	  </div>
+  
+	  <div id='outcome' class='hidden interface'>
+	  		<form id='nextStage'>
+	  		<p class='outcomeText'></p>
+	  		<h3 class='outcomeTitle'></h3>
+	  		<button>Continue</button>
+	  		</form>
+	  </div>
+
+	  <div id='ending' class='hidden interface'>
+	  <p>You have reached the end of the journey.</p>
+	  <span class='endingText'></span>
+	  <p>Try the game again with different actions and see what kind of story you tell.</p>
+	  <p>Thank you for playing!</p>
+	  </div>
+
+	</div>	  
+</div> 
+
+
+<script src="../libraries/jquery-3.2.1.min.js"></script>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+<script src="charmaker.js"></script>
+</body>
+</html>
